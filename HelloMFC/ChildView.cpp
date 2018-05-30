@@ -51,8 +51,12 @@ void CChildView::OnPaint()
 	
 	// TODO: 여기에 메시지 처리기 코드를 추가합니다.
 	CString sampleText;
-	sampleText = "test";
-	TextOutW(dc, m_ptMouseClick.x, m_ptMouseClick.y, sampleText, 4);
+	sampleText = "Point (x, y) : ";
+	sampleText += (char) &m_ptMouseClick.x;
+	sampleText += ", ";
+	sampleText += (char) &m_ptMouseClick.y;
+	TextOutW(dc, m_ptMouseClick.x, m_ptMouseClick.y, sampleText, sampleText.GetLength());
+//	TextOutW(dc, m_ptMouseClick.x, m_ptMouseClick.y, sampleText, 4);
 	// 그리기 메시지에 대해서는 CWnd::OnPaint()를 호출하지 마십시오.
 }
 
